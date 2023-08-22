@@ -19,8 +19,11 @@ Flaskサーバーのデフォルトポートは5000なのでポートには5000�
 そうしたら1つ下にあるURL GeneratorのSCOPESで"identify"と"guilds.join"を選択、  
 SELECT REDIRECT URLにはさっき入力したアドレスを選択して認証に必要なURLを作成しましょう  
 このURLも後で使うので控えておきます  
-もちろんBotなのでBotのトークンもコピーしておいてください
 ![3](image/3.png)  
+最後にBotとして機能するように権限も渡しておいてください  
+ここのPrivileged Gateway Intentsの編集を忘れているとそもそもBotがログインできないし、権限も管理者じゃないと機能しません  
+もちろんBotなのでBotのトークンもコピーしておいてください  
+![7](image/7.png)  
 これでDeveloper Portalから必要になる情報は以上です  
 いったんDeveloper Portalを離れてローカル環境で編集します
 ## ローカルでの作業
