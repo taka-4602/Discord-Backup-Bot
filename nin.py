@@ -185,7 +185,7 @@ async def on_button_click(interaction:discord.Interaction):
         try:
             await interaction.user.add_roles(interaction.guild.get_role(roleid))
         except:
-            await interaction.response.send_message("おや？ロールが存在しないようです\n管理者に連絡してください")
+            await interaction.response.send_message("おや？ロールが存在しないか\nBotにロール付与の権限がないようです\n管理者に連絡してください")
             return
         await interaction.response.send_message("ナイス！認証完了です！", ephemeral=True)    
 
