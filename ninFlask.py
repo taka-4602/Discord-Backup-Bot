@@ -8,7 +8,7 @@ from flask import Flask
 
 app = Flask("app")
 
-ipath="C:/Users/Shun/Downloads/json/userdata.json"
+ipath="userdata.json のパスをここに"
 
 @app.route('/', methods=["GET"])
 def index():
