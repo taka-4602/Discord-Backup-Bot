@@ -1,4 +1,4 @@
-# Discord-ninshou-URL-bot
+# Discord-Backup-bot
 ### ⚠️このBotは1サーバー / 1Botを想定してコーディングされています⚠️
 ## Botのセットアップ
 #### Pythonを使える環境と脳みそ、Botアカウントの作成と編集ができることが前提に話が進みます
