@@ -48,7 +48,7 @@ def index():
         userid = json.load(useridj)
 
         if b in userid.values():
-               return f"<h1>登録成功！ {data3}さんよろしく！</h1>" 
+               return f"<h1>{data3}さん、あなたはすでに登録されています！</h1>" 
         if a in userid.values():
             del (userid[f"{a}"])
         try:                  
