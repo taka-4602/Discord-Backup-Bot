@@ -1,7 +1,9 @@
 # Discord-Backup-bot
 ### ⚠️このBotは1サーバー / 1Botを想定してコーディングされています⚠️
 ### 2023/9/15：サーバーごとに別のファイルに保存するバージョンも作りました
-最後の方にそっちの使い方も書いておきます
+招待は↓から！  
+https://discord.com/oauth2/authorize?client_id=1152222169154199552&permissions=8&redirect_uri=https%3A%2F%2Fback-pack.takaka4602.repl.co%2F&scope=bot  
+ローカルに構築するかた向けに最後の方にそっちのセットアップ方法も書いておきます
 ## Botのセットアップ
 #### Pythonを使える環境と脳みそ、Botアカウントの作成と編集ができることが前提に話が進みます
 ##### もし動作を知りたいなら↓
