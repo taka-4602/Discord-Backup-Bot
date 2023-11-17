@@ -101,3 +101,9 @@ nin.pyとの違いはipath2にサーバーID.jsonが保存される"フォルダ
 ninFlask.pyはそのままでだいじょうぶです
 
 ## チェックボタンを押す必要のなくなったv2の使い方
+Flask Discord Extendedが必要になります  
+- pip install Flask-Discord-Extended  
+FlaskのファイルにもBotのトークンとipath2の入力が必要になりました
+![10](image/10.png)  
+これだけです
+バグとかおかしなとこがあれば連絡してくれると非常に助かります！！
