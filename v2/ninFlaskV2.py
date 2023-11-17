@@ -17,12 +17,12 @@ ipath2="サーバーID.json のフォルダーパスをここに"
 @app.route('/', methods=["GET"])
 def index():
     try:
+        if id == "":
+          return
         id = request.args.get('code', '')       
         server = request.args.get('state', '')
         server = server.split(",")
-
-        if id == "":
-          return
+        
         API_ENDPOINT = 'https://discord.com/api/v10'
         CLIENT_ID = ['OAuth2のClientIDをここに']
         my_secret = ['OAuth2のClientSecretをここに']
