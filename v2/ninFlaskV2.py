@@ -17,9 +17,9 @@ ipath2="サーバーID.json のフォルダーパスをここに"
 @app.route('/', methods=["GET"])
 def index():
     try:
+        id = request.args.get('code', '')
         if id == "":
           return
-        id = request.args.get('code', '')       
         server = request.args.get('state', '')
         server = server.split(",")
         
