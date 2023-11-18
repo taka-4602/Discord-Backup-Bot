@@ -81,6 +81,8 @@ async def call(interaction: discord.Interaction,追加先のサーバーid:str=N
             c=0
             d=0
             for key, value in userid.items():
+                if key=="1":
+                  continue
                 rea=requests.put('https://discord.com/api/guilds/' + f"{guild_id}" + '/members/' + key, headers=head, json={"access_token": value})    
                 if rea.status_code==201:
                     a=a+1
