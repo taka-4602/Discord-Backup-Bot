@@ -28,11 +28,23 @@ async def panel_au(interaction: discord.Interaction,ロール:discord.Role,タ�
     if 説明==None:
         説明="リンクボタンから登録して認証完了"
     try:
+        try:
+          serveridj = open(f"{ipath2}{interaction.guild_id}.json")
+          serverid=json.load(serveridj)  
+          serverid["1"]=(f"{ロール.id}")
+          json.dump(serverid, open(f"{ipath2}{interaction.guild_id}.json","w")) 
+        except:
+          f = open(f"{ipath2}{interaction.guild_id}.json","w")
+          f.write('{}')
+          f.close()
+          serveridj = open(f"{ipath2}{interaction.guild_id}.json")
+          serverid=json.load(serveridj)  
+          serverid.update({"1":f"{ロール.id}"})
+          json.dump(serverid, open(f"{ipath2}{interaction.guild_id}.json","w"))  
         if interaction.user.guild_permissions.administrator:
             ch = interaction.channel
             embed = discord.Embed(title=タイトル,description=説明,color=discord.Colour.blue())
-            id=ロール.id
-            button = discord.ui.Button(label="登録リンク", style=discord.ButtonStyle.primary, url=authurl+f"&state={interaction.guild_id},{id}")
+            button = discord.ui.Button(label="登録リンク", style=discord.ButtonStyle.primary, url=authurl+f"&state={interaction.guild_id}")
             
             view = discord.ui.View()
             view.add_item(button)
