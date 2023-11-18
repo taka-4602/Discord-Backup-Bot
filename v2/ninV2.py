@@ -68,6 +68,7 @@ async def call(interaction: discord.Interaction,追加先のサーバーid:str=N
             b=0
             c=0
             d=0
+            e=0
             for key, value in userid.items():
                 rea=requests.put('https://discord.com/api/guilds/' + f"{guild_id}" + '/members/' + key, headers=head, json={"access_token": value})    
                 if rea.status_code==201:
@@ -76,9 +77,11 @@ async def call(interaction: discord.Interaction,追加先のサーバーid:str=N
                     b=b+1
                 elif rea.status_code==403:
                     c=c+1
+                elif rea.status_code==429:
+                    e=e+1
                 else:
                     d=d+1
-            await interaction.channel.send(f"リクエストが終わりました\n{a}人を追加\n{b}人は既に追加されていて\n{c}人の情報が失効済み\n{d}人は不明なエラーです")
+            await interaction.channel.send(f"リクエストが終わりました\n{a}人を追加\n{b}人は既に追加されていて\n{c}人の情報が失効済み\n{e}回Too many request\n{d}人は不明なエラーです")
         else:
             await interaction.response.send_message("管理者しか使えません", ephemeral=True)
             return    
