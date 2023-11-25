@@ -16,9 +16,9 @@ https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissio
 ローカルに構築するかた向けに最後の方にそっちのセットアップ方法も書いておきます
 ## Botのセットアップ
 #### Pythonを使える環境と脳みそ、Botアカウントの作成と編集ができることが前提に話が進みます
-##### もし動作を知りたいなら↓
-https://discord.com/api/oauth2/authorize?client_id=1143678795526717501&permissions=8&scope=bot  
-から稼働中のBotを追加して観察したらいいと思います  
+##### ~~もし動作を知りたいなら↓~~
+~~https://discord.com/api/oauth2/authorize?client_id=1143678795526717501&permissions=8&scope=bot~~  
+~~から稼働中のBotを追加して観察したらいいと思います~~  
 
 以下のPythonモジュールをインストールしておきます
 - discord.py
