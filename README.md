@@ -3,7 +3,7 @@
 ↑今は複数のサーバーに対応させたモデルか1サーバーだけのモデルか選べるのであんまり関係ないです
 ## Botについて
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
-↓バックアップBot↓
+↓バックアップBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissions=8&scope=bot  
 ↓メン爆用Bot↓  
 https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
