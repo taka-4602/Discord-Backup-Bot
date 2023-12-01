@@ -16,7 +16,7 @@ https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissio
 ## 2023/11/29：v3リリース！
 変更点は以下の通りです  
 - /callコマンド専用のファイルを作り、/callが使われてもBotが停止しなくなりました  
-  このコードだと/callは1回しか使えないです、call中に/callを使うとBotから返信されます
+  このコードだと/callは1回しか使えないです、call中に/callを使うとBotから返信されます  
   callされているかの判定は同じディレクトリにあるnow.jsonで行っています
 - 気持ち程度にstateの引数を暗号化するようにしました  
   ここでバラしたら元も子もないですが、URLはそれぞれ16進と8進に変えられてninFlaskV3内でintにデコードします
