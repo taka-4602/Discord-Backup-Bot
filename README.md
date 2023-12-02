@@ -13,7 +13,6 @@ https://discord.gg/aSyaAK7Ktm
 https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissions=8&scope=bot  
 ↓メン爆用Bot↓  
 https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
-ソースコードは商用に使ってもらっても構いませんが、寄付なしでされるとダメージを受けます  
 ## 2023/11/29：v3リリース！
 変更点は以下の通りです  
 - /callコマンド専用のファイルを作り、/callが使われてもBotが停止しなくなりました  
