@@ -12,8 +12,7 @@ tree = discord.app_commands.CommandTree(client)
 ipath="userdata.json のパスをここに"
 ipath2="サーバーID.json のフォルダーパスをここに"
 
-BOTTOKEN="Botのトークンをここに"
-authurl="作ったURLをここに"
+BOTTOKEN="Botのトークンをここに
 
 @client.event
 async def on_ready():
