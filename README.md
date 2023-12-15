@@ -12,7 +12,7 @@ https://discord.gg/aSyaAK7Ktm
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
 ↓バックアップBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissions=8&scope=bot  
-↓メン爆用Bot↓  
+↓メンバーブーストBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
 ### BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！！
 しかも無償で。Thankyou very much!!!
