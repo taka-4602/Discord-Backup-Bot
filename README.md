@@ -16,6 +16,32 @@ https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissio
 https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
 ### BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！！
 しかも無償で。Thankyou very much!!!
+## 2023/12/15：OAuth2トークンの有効期限について
+### メンバーブーストに使っているトークンですが、どうやら1週間で期限が切れるみたいです
+対策としては403が返されたときにリフレッシュトークンを使ってアクセストークンを再発行することです  
+```
+API_ENDPOINT = 'https://discord.com/api/v10'
+CLIENT_ID = ['アプリケーションID']
+CLIENT_SECRET = ['アプリケーションシークレット']
+REDIRECT_URI = "リダイレクト先"
+data = {
+        'client_id': CLIENT_ID,
+        'client_secret': CLIENT_SECRET,
+        'grant_type': 'refresh_token',
+        'refresh_token': 'ここにリフレッシュトークン',
+        'redirect_uri': REDIRECT_URI
+        }
+        headers = {
+        'Content-Type': 'application/x-www-form-urlencoded'
+        }
+```
+こんな感じでデータとヘッダーを設定したらリクエストする時につけてあげます
+```
+requests.post('%s/oauth2/token' % API_ENDPOINT, data=data, headers=headers)
+```
+これで返り値に新しいアクセストークンと新しいリフレッシュトークンがくっついてきます！  
+リフレッシュトークンも毎回更新されるようです！  
+ここのソースコードのお好きなところにくっつけて使ってあげてください！
 ## 2023/11/29：v3リリース！
 変更点は以下の通りです  
 - /callコマンド専用のファイルを作り、/callが使われてもBotが停止しなくなりました  
