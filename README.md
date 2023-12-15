@@ -44,7 +44,7 @@ requests.post('%s/oauth2/token' % API_ENDPOINT, data=data, headers=headers)
 {'token_type': 'Bearer', 'access_token': 't7KOqezBkvQbBCiKyRG3aW4GfwJD4Q', 'expires_in': 604800,
  'refresh_token': 'tnKw3UtwqrernhImzDkEEP4eJwkiQh', 'scope': 'guilds.join identify'}
 ```
-これで返り値に新しいアクセストークンと新しいリフレッシュトークンがくっついてきます！  
+返り値に新しいアクセストークンと新しいリフレッシュトークンがくっついてきます！  
 リフレッシュトークンも毎回更新されるようです！  
 ここのソースコードのお好きなところにくっつけて使ってあげてください！
 ## 2023/11/29：v3リリース！
