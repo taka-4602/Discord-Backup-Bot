@@ -28,8 +28,7 @@ def index():
         
         API_ENDPOINT = 'https://discord.com/api/v10'
         CLIENT_ID = ['OAuth2のClientIDをここに']
-        my_secret = ['OAuth2のClientSecretをここに']
-        CLIENT_SECRET = my_secret
+        CLIENT_SECRET = ['OAuth2のClientSecretをここに']
         REDIRECT_URI = 'Flaskサーバーが建てられている場所(IPアドレスやドメイン)をここに'
         data = {
             'client_id': CLIENT_ID,
