@@ -14,6 +14,7 @@ ipath=v4path.ipath
 ipath2=v4path.ipath2
 BOTTOKEN=v4path.BOTTOKEN
 authurl=v4path.authurl
+nowjson=v4path.nowjson
 
 @client.event
 async def on_ready():
@@ -51,7 +52,7 @@ async def panel_au(interaction: discord.Interaction,ロール:discord.Role,タ�
 
 @tree.command(name="call", description="認証したひと”全員”を追加する")
 async def call(interaction: discord.Interaction,データサーバーid:str=None):
-    nj=open("now.json")
+    nj=open(nowjson)
     now=json.load(nj)
     if now["now"]=="1":
         await interaction.response.send_message(f"現在/call中です", ephemeral=True)
