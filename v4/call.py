@@ -12,6 +12,7 @@ tree = discord.app_commands.CommandTree(client)
 ipath=v4path.ipath
 ipath2=v4path.ipath2
 BOTTOKEN=v4path.BOTTOKEN
+nowjson=v4path.nowjson
 
 @client.event
 async def on_ready():
@@ -21,16 +22,16 @@ async def on_ready():
 async def call(interaction: discord.Interaction,データサーバーid:str=None):
     try:
         if interaction.user.guild_permissions.administrator:
-            nj=open("now.json")
+            nj=open(nowjson)
             nowj = json.load(nj)
             if nowj["now"] == "1":
                 nowj["now"]="0"
-                json.dump(nowj, open("now.json","w"))
+                json.dump(nowj, open(nowjson,"w"))
                 nj.close()
                 return
             
             nowj["now"]="1"
-            json.dump(nowj, open("now.json","w"))
+            json.dump(nowj, open(nowjson,"w"))
             nj.close()
             zenj=open(ipath)
             zendata = json.load(zenj)
@@ -75,10 +76,10 @@ async def call(interaction: discord.Interaction,データサーバーid:str=None
             else:
                 json.dump(userid, open(f"{ipath2}{データサーバーid}.json","w"))
                 json.dump(zendata, open(ipath,"w"))
-            nj=open("now.json")
+            nj=open(nowjson)
             nowj = json.load(nj)
             nowj["now"]="0"
-            json.dump(nowj, open("now.json","w"))
+            json.dump(nowj, open(nowjson,"w"))
             nj.close()
             await interaction.channel.send(f"リクエストが終わりました\n{a}人を追加\n{b}人は既に追加されていて\n{c}人の情報が失効済み\n{e}回TooManyRequest\n{f}人はこれ以上サーバーに参加できません\n{d}人は不明なエラーです")
         else:
