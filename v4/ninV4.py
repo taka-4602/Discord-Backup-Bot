@@ -9,11 +9,10 @@ intents = discord.Intents.default()
 client = discord.Client(intents = intents)
 tree = discord.app_commands.CommandTree(client)
 
-ipath="userdata.json のパスをここに"
-ipath2="サーバーID.json のフォルダーパスをここに"
-
-BOTTOKEN="Botのトークンをここに"
-authurl="作ったURLをここに"
+ipath=v4path.ipath
+ipath2=v4path.ipath2
+BOTTOKEN=v4path.BOTTOKEN
+authurl=v4path.authurl
 
 @client.event
 async def on_ready():
