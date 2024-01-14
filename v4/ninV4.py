@@ -22,11 +22,7 @@ async def on_ready():
     await tree.sync()
 
 @tree.command(name="button", description="認証ボタンの表示")
-async def panel_au(interaction: discord.Interaction,ロール:discord.Role,タイトル:str=None,説明:str=None):
-    if タイトル==None:
-        タイトル="こんにちは！"
-    if 説明==None:
-        説明="リンクボタンから登録して認証完了"
+async def panel_au(interaction: discord.Interaction,ロール:discord.Role,タイトル:str="こんにちは！",説明:str="リンクボタンから登録して認証完了"):
     try:
         if interaction.user.guild_permissions.administrator:
             embed = discord.Embed(title=タイトル,description=説明,color=discord.Colour.blue())
