@@ -3,15 +3,15 @@ import json
 import requests
 import time
 from threading import Thread
-import ninV4
+import v4path
 
 intents = discord.Intents.default()
 client = discord.Client(intents = intents)
 tree = discord.app_commands.CommandTree(client)
 
-ipath=ninV4.ipath
-ipath2=ninV4.ipath2
-BOTTOKEN=ninV4.BOTTOKEN
+ipath=v4path.ipath
+ipath2=v4path.ipath2
+BOTTOKEN=v4path.BOTTOKEN
 
 @client.event
 async def on_ready():
