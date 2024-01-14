@@ -9,10 +9,10 @@ ipath=v4path.ipath
 ipath2=v4path.ipath2
 BOTTOKEN=v4path.BOTTOKEN
 
-API_ENDPOINT = 'https://discord.com/api/v10'
-CLIENT_ID = ['OAuth2のClientIDをここに']
-CLIENT_SECRET = ['OAuth2のClientSecretをここに']
-REDIRECT_URI = 'Flaskサーバーが建てられている場所(IPアドレスやドメイン)をここに'
+API_ENDPOINT = v4path.API_ENDPOINT
+CLIENT_ID = v4path.CLIENT_ID
+CLIENT_SECRET = v4path.CLIENT_SECRET
+REDIRECT_URI = v4path.REDIRECT_URI
 
 @app.route('/', methods=["GET"])
 def index():
