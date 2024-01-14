@@ -30,9 +30,13 @@ async def panel_au(interaction: discord.Interaction,ロール:discord.Role,タ�
             view = discord.ui.View()
             view.add_item(button)
             await interaction.response.send_message("made by ```.taka.``` thankyou for running!!!", ephemeral=True)
-            f = open(f"{ipath2}{interaction.guild.id}.json","w")
-            f.write('{}')
-            f.close()
+            try:
+                f=open(f"{ipath2}{interaction.guild.id}.json")
+                f2 = json.load(f)
+            except:
+                f = open(f"{ipath2}{interaction.guild.id}.json","w")
+                f.write('{}')
+                f.close()
             try:
                 await interaction.channel.send(embed = embed, view = view)
             except:
