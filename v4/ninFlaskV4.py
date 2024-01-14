@@ -2,12 +2,12 @@ from threading import Thread
 from flask import Flask, request
 import json
 import requests
-import ninV4
+import v4path
 
 app = Flask("app")
-BOTTOKEN = ninV4.BOTTOKEN
-ipath=ninV4.ipath
-ipath2=ninV4.ipath
+ipath=v4path.ipath
+ipath2=v4path.ipath2
+BOTTOKEN=v4path.BOTTOKEN
 
 API_ENDPOINT = 'https://discord.com/api/v10'
 CLIENT_ID = ['OAuth2のClientIDをここに']
