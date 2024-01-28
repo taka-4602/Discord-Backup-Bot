@@ -15,8 +15,8 @@
 https://discord.com/api/oauth2/authorize?client_id=1152222169154199552&permissions=8&scope=bot  
 ↓メンバーブーストBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
-#### BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！！
-しかも無償で。Thankyou very much!!!
+BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
+しかも無償で。Thankyou very much!!
 ## OAuth2トークンの有効期限について
 ### メンバーブーストに使っているトークンですが、1週間で期限が切れるみたいです
 対策としてはリフレッシュトークンを使ってアクセストークンを再発行することです  
