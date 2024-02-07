@@ -1,9 +1,9 @@
 # Discord-Backup-Bot
 ソースコードの2次配布、販売はお控えください
-## EGAMを使用したv5について  
-### [Discord-Easy-Guild-Add-Member](https://github.com/taka-4602/Discord-Easy-Guild-Add-Member/tree/main) のリリースと同時にこのREADMEを大幅に変更しました  
+## EAGMを使用したv5について  
+### [Discord-Easy-Add-Guild-Member](https://github.com/taka-4602/Discord-Easy-Add-Guild-Member/tree/main) のリリースと同時にこのREADMEを大幅に変更しました  
 - バックアップ、リストア、ロール付与作業にEGAMを使用するようになりました
-  ### >> ```pip install EGAM``` <<
+  ### >> ```pip install EAGM``` <<
 - callを非同期に変更
 
   
@@ -20,18 +20,18 @@ BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれ�
 ## OAuth2トークンの有効期限について
 ### メンバーブーストに使っているトークンですが、1週間で期限が切れるみたいです
 対策としてはリフレッシュトークンを使ってアクセストークンを再発行することです  
-EGAMを使えば簡単に短く収まります
+EAGMを使えば簡単に短く収まります
 ```python
-from EGAM import EGAM
+from EAGM import EAGM
 
 token="Discord Bot Token"
 cid="Client ID"
 cse="Client Secret"
 ruri="Redirect URI"
 
-egam=EGAM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)
+eagm=EAGM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)
 
-print(egam.refresh("refresh_token")) #<- リフレッシュ作業はこの1行だけ！
+print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行だけ！
 ```
 返り値はこんな感じです
 ```
