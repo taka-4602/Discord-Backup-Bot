@@ -2,7 +2,7 @@
 ソースコードの2次配布、販売はお控えください
 ## EAGMを使用したv5について  
 ### [Discord-Easy-Add-Guild-Member](https://github.com/taka-4602/Discord-Easy-Add-Guild-Member/tree/main) のリリースと同時にこのREADMEを大幅に変更しました  
-- バックアップ、リストア、ロール付与作業にEGAMを使用するようになりました
+- バックアップ、リストア、ロール付与作業にEAGMを使用するようになりました
   ### >> ```pip install EAGM``` <<
 - callを非同期に変更
 
