@@ -58,5 +58,4 @@ def run():
     app.run(debug=False,host="0.0.0.0")
 
 def start():
-    t = Thread(target=run)
-    t.start()
+    Thread(target=run).start()
