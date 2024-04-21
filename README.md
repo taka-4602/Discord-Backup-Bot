@@ -47,7 +47,7 @@ print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行�
 - discord.py
 - requests
 - flask
-- EGAM
+- EAGM
   
 Discord Developer Portalにアクセス  
 https://discord.com/developers/applications  
