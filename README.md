@@ -14,7 +14,7 @@
 ↓バックアップBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1204842849624006656&permissions=8&scope=bot  
 ↓メンバーブーストBot↓  
-https://discord.com/api/oauth2/authorize?client_id=1178210441307115550&permissions=8&scope=bot  
+https://discord.com/api/oauth2/authorize?client_id=1096727990655778876&permissions=8&scope=bot  
 BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
 しかも無償で。Thankyou very much!!
 ## OAuth2トークンの有効期限について
