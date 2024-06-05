@@ -120,5 +120,5 @@ jsonの特徴を知っている方ならお気づきだと思いますが非同�
 ( 非同期で/callを使っているとして ) もし最初の/callでjsonが変更されても2重で開かれている方は開いた時点のデータを参照するため不都合が起きます ( しかもそのデータをdumpする )  
 json以外のデータベースに変更するのが解法でしょう、実際に僕がホスティングしてるBotはSQLiteを使用しています.....  
 ## コンタクト  
-サーバー / https://discord.gg/aSyaAK7Ktm  
-僕のDiscord / .taka.  
+Discord サーバー / https://discord.gg/aSyaAK7Ktm  
+Discord ユーザー名 / .taka.  
