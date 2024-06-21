@@ -6,8 +6,7 @@
   ### >> ```pip install EAGM``` <<
 - callを非同期に変更
 
-  
-### 以前のドキュメントはここから -> [README_OLD](https://github.com/taka-4602/Discord-Backup-Bot/blob/main/README_OLD.md)
+
 ## Botについて
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
 ### サーバー -> https://discord.gg/aSyaAK7Ktm
