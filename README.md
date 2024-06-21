@@ -1,6 +1,6 @@
 # Discord-Backup-Bot
 ソースコードの2次配布、販売はお控えください
-## EAGMを使用したv5について  
+## EAGMを使用したv5～について  
 ### [Discord-Easy-Add-Guild-Member](https://github.com/taka-4602/Discord-Easy-Add-Guild-Member/tree/main) のリリースと同時にこのREADMEを大幅に変更しました  
 - バックアップ、リストア、ロール付与作業にEAGMを使用するようになりました
   ### >> ```pip install EAGM``` <<
@@ -21,7 +21,7 @@ BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれ�
 ### メンバーブーストに使っているトークンですが、1週間で期限が切れるみたいです
 対策としてはリフレッシュトークンを使ってアクセストークンを再発行することです  
 EAGMを使えば簡単に短く収まります
-```python
+```py
 from EAGM import EAGM
 
 token="Discord Bot Token"
@@ -67,27 +67,26 @@ SELECT REDIRECT URLにはさっき入力したアドレスを選択して認証�
 これでDeveloper Portalから必要になる情報は以上です  
 いったんDeveloper Portalを離れてローカル環境で編集します
 ## ローカルでの作業
-リポジトリからv5をダウンロードして使用します  
+リポジトリからv6をダウンロードして使用します  
 このBotはjson形式でユーザー情報を保存するので好きなところに好きな名前でjsonファイルを作ってください  
 この時作ったjsonファイルには {} とだけ記載しておいて、jsonとしてちゃんと機能するようにしておいてください  
 - 僕は"userdata.json"という名前で作成しました
   
-そうしたらエディターかメモ帳かでv5path.pyを開きます  
+そうしたらエディターかメモ帳かでv6path.pyを開きます  
 - 僕はVisual Studio Codeを使いました
 
-#### v5path.py
-```python
-BOTTOKEN="MTE5NjA5NDkyMDQwMjkzO~~~~~"
-CLIENT_ID = '119609492~~~~~~~'
-CLIENT_SECRET = 'neyNtIZTOgzbnxyRX~~~~~~~~~~'
-REDIRECT_URI = 'http://GlobalIP:5000/'
+#### v6path.py
+```py
+BOTTOKEN = "MTE5NjA5NDkyMDQwMjkzO~~~~~"
+CLIENT_ID = "119609492~~~~~~~"
+CLIENT_SECRET = "neyNtIZTOgzbnxyRX~~~~~~~~~~"
+REDIRECT_URI = "http://GlobalIP:5000/"
 
-ipath="C:/Users/Taka/Downloads/v5/userdata.json"
-ipath2="C:/Users/Taka/Downloads/v5/server/"
-authurl="https://discord.com/api/oauth2/authorize?~~~~~scope=identify+guilds.join"
-
+usadata_path = "C:/Users/Taka/Downloads/v5/userdata.json"
+serverdata_folder_path = "C:/Users/Taka/Downloads/v5/server/"
+authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~~~~~scope=identify+guilds.join)"
 ```
-これの入力が終わったらBotを起動できます！  
+これの入力が終わったらninV6.pyを実行してBotを起動できます！  
 ### サーバーに接続できない、500が返される
 - ちゃんとポートが開放されているかチェックしてください
 - 自分のグローバルIPに自分のグローバルIPから接続することはできません、ローカルで動作チェックをするならローカルIPを使ってください  
