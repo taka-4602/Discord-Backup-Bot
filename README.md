@@ -100,7 +100,6 @@ authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~
   jsonに保存されたユーザー全員を追加します、誤爆には充分気をつけてください
 - request1  
   指定したIDのユーザーを追加します  
-  サーバーIDを入力するとBotが参加している別のサーバーにも参加させることができます
 - check  
   指定したユーザーIDの情報が登録されているか確認します
 - datacheck  
