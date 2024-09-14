@@ -3,15 +3,13 @@
 
 ## Botについて
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
-### サーバー -> https://discord.gg/aSyaAK7Ktm
-↓バックアップBot↓  
-https://discord.com/api/oauth2/authorize?client_id=1204842849624006656&permissions=8&scope=bot  
-↓メンバーブーストBot↓  
+### サーバー -> https://discord.gg/aSyaAK7Ktm  
+↓バックアップ / メンバーブーストBot↓  
 https://discord.com/api/oauth2/authorize?client_id=1096727990655778876&permissions=8&scope=bot  
 BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
 しかも無償で。Thankyou very much!!
 ## OAuth2トークンの有効期限について
-### メンバーブーストに使っているトークンですが、1週間で期限が切れるみたいです
+### メンバーブーストに使っているトークンですが、1週間で期限が切れます
 対策としてはリフレッシュトークンを使ってアクセストークンを再発行することです  
 EAGMを使えば簡単に短く収まります
 ```py
@@ -111,9 +109,9 @@ jsonの特徴を知っている方ならお気づきだと思いますが非同�
 ( 非同期で/callを使っているとして ) もし最初の/callでjsonが変更されても2重で開かれている方は開いた時点のデータを参照するため不都合が起きます ( しかもそのデータをdumpする )  
 json以外のデータベースに変更するのが解法でしょう、実際に僕がホスティングしてるBotはSQLiteを使用しています.....  
   
-え、"v6なのにリフレッシュはつけてないの？"って？、つけてないです このBotは完璧な状態で置いてない  
-データベースは上記の通りjsonだし、callは非同期になってるもののEAGMのリクエストは非同期ではない  
-ここから先はオプションです、なんてね  
+補足  
+データベースは上記の通りjsonだし、callは非同期になってるもののEAGMのリクエストは非同期じゃない  
+このBotは完璧な状態ではありません...  
 ## コンタクト  
 Discord サーバー / https://discord.gg/aSyaAK7Ktm  
 Discord ユーザー名 / .taka.  
