@@ -37,8 +37,11 @@ async def index():
         addrole=await eagm.add_role(user_id=eagm.user_id,guild_id=str(server_id),role_id=server_data["role"])
         if addrole!=204:
             return f"<h1>ロールの付与に失敗しました<br>Botがロールを付与できる状態か確認してください<br>Botのロールが付与したいロールの1つ上に置かれていない場合や、管理権限に2段階認証が必要になっている場合ロールが付与できません！</h1>",400
-
-        userdata = json.load(open(usadata_path))
+        
+        try:
+            userdata = json.load(open(usadata_path))
+        except:
+            userdata = {}
 
         if not eagm.user_id in server_data.keys():
             server_data.update({eagm.user_id:str(len(userdata))})

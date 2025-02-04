@@ -57,7 +57,11 @@ async def call(interaction: discord.Interaction,データサーバーid:str=None
         await interaction.response.send_message("管理者しか使えません", ephemeral=True)
         return
     
-    alldata = json.load(open(usadata_path))
+    try:
+        alldata = json.load(open(usadata_path))
+    except:
+        await interaction.response.send_message("登録されているユーザーデータはありません")
+        return
 
     if not データサーバーid:
         data_path=open(f"{serverdata_folder_path}{interaction.guild_id}.json")
@@ -115,7 +119,11 @@ async def check(interaction: discord.Interaction,ユーザーid:str):
         await interaction.response.send_message("管理者しか使えません", ephemeral=True)
         return
     
-    userdata = json.load(open(usadata_path))
+    try:
+        userdata = json.load(open(usadata_path))
+    except:
+        await interaction.response.send_message("登録されているユーザーデータはありません")
+        return
     try:
         await interaction.response.send_message(f"該当ユーザーのトークンは```{userdata[ユーザーid]}```です\nUserID：```{ユーザーid}```")
 
@@ -132,8 +140,11 @@ async def req1(interaction: discord.Interaction,ユーザーid:str):
     if not interaction.user.guild_permissions.administrator:
         await interaction.response.send_message("管理者しか使えません", ephemeral=True)
         return
-    
-    userdata = json.load(open(usadata_path))
+    try:
+        userdata = json.load(open(usadata_path))
+    except:
+        await interaction.response.send_message("登録されているユーザーデータはありません")
+        return
     try:
         addmember=eagm.add_member(access_token=userdata[ユーザーid],user_id=ユーザーid,guild_id=str(interaction.guild_id))
         if addmember==201:
@@ -167,7 +178,11 @@ async def delk(interaction: discord.Interaction,ユーザーid:str):
         await interaction.response.send_message("管理者しか使えません", ephemeral=True)
         return
     
-    userdata = json.load(open(usadata_path))
+    try:
+        userdata = json.load(open(usadata_path))
+    except:
+        await interaction.response.send_message("登録されているユーザーデータはありません")
+        return
     try:
         del userdata[ユーザーid]
         json.dump(userdata, open(usadata_path,"w"))
@@ -190,7 +205,7 @@ async def dck(interaction: discord.Interaction):
     try:
         await interaction.response.send_message(f"{len(json.load(open(usadata_path)))}人のデータが登録されています")
     except:
-        await interaction.response.send_message("ファイルが使えなくなっています")
+        await interaction.response.send_message("登録されているユーザーデータはありません")
 
 start()
 time.sleep(1)
