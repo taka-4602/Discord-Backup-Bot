@@ -3,9 +3,10 @@
 
 ## Botについて
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
-### サーバー -> https://discord.gg/aSyaAK7Ktm  
-↓バックアップ / メンバーブーストBot↓  
-https://discord.com/api/oauth2/authorize?client_id=1096727990655778876&permissions=8&scope=bot  
+  
+↓Bot追加用URL↓  
+https://discord.com/oauth2/authorize?client_id=1325891361899151440&permissions=8&scope=bot  
+### サポートサーバー -> https://discord.gg/aSyaAK7Ktm  
 BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
 しかも無償で。Thankyou very much!!
 ## OAuth2トークンの有効期限について
@@ -38,7 +39,7 @@ print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行�
 - discord.py
 - requests
 - flask
-- EAGM
+- ~~EAGM~~ -> v7からは不要
   
 Discord Developer Portalにアクセス  
 https://discord.com/developers/applications  
@@ -58,15 +59,14 @@ SELECT REDIRECT URLにはさっき入力したアドレスを選択して認証�
 これでDeveloper Portalから必要になる情報は以上です  
 いったんDeveloper Portalを離れてローカル環境で編集します
 ## ローカルでの作業
-リポジトリからv6をダウンロードして使用します  
-このBotはjson形式でユーザー情報を保存するので好きなところに好きな名前でjsonファイルを作ってください  
-この時作ったjsonファイルには {} とだけ記載しておいて、jsonとしてちゃんと機能するようにしておいてください  
-- 僕は"userdata.json"という名前で作成しました
+リポジトリからv7をダウンロードして使用します  
+このBotはjson形式でユーザー情報を保存するので好きなところに保存するようにパスを指定してください
+- 僕は"userdata.json"という名前で保存しました
   
-そうしたらエディターかメモ帳かでv6path.pyを開きます  
+そうしたらエディターかメモ帳かでv7path.pyを開きます  
 - 僕はVisual Studio Codeを使いました
 
-#### v6path.py
+#### v7path.py
 ```py
 BOTTOKEN = "MTE5NjA5NDkyMDQwMjkzO~~~~~"
 CLIENT_ID = "119609492~~~~~~~"
@@ -105,13 +105,10 @@ authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~
 - delkey  
   指定したユーザーIDの登録情報を削除します
 ### 余談
-jsonの特徴を知っている方ならお気づきだと思いますが非同期で/callを使うと2重でjsonが開かれ、dumpも2回行われます  
-( 非同期で/callを使っているとして ) もし最初の/callでjsonが変更されても2重で開かれている方は開いた時点のデータを参照するため不都合が起きます ( しかもそのデータをdumpする )  
-json以外のデータベースに変更するのが解法でしょう、実際に僕がホスティングしてるBotはSQLiteを使用しています.....  
-  
-補足  
-データベースは上記の通りjsonだし、callは非同期になってるもののEAGMのリクエストは非同期じゃない  
-このBotは完璧な状態ではありません...  
+v7で非同期になりました、あと1部で報告が挙がっていたロールジャックも防ぐため、v2alphaみたいにローカルファイルに保存するようにしました  
+jsonに保存する仕様は変わっていないです、jsonを2重で開く問題が気になる方は他の保存形式に変えるか、そもそも2重で開かないように調整したら大丈夫だと思います (僕のBotはSQLiteを使ってる)  
+なるべくテキストエディターで開けないファイルは使いたくないので、この部分を変更することはないと思います (テキストエディターで開いて、文字化けしてるのが正常かどうか質問してくるユーザーが1定数いる...)  
+あとはユーザートークンをリフレッシュするコードもまだ追加してないです  
 ## コンタクト  
 Discord サーバー / https://discord.gg/aSyaAK7Ktm  
 Discord ユーザー名 / .taka.  
