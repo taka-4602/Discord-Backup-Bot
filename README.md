@@ -38,7 +38,7 @@ print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行�
 以下のPythonモジュールをインストールしておきます
 - discord.py
 - requests
-- flask
+- flask -> v7は flask[async]
 - ~~EAGM~~ -> v7からは不要
   
 Discord Developer Portalにアクセス  
