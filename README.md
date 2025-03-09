@@ -37,10 +37,16 @@ print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行�
 
 以下のPythonモジュールをインストールしておきます
 - discord.py
-- requests
+- httpx
 - flask -> v7は flask[async]
 - ~~EAGM~~ -> v7からは不要
-  
+
+```
+pip install discord.py
+pip install httpx
+pip install flask[async]
+```
+#### ↑をコピペでインストールできます
 Discord Developer Portalにアクセス  
 https://discord.com/developers/applications  
 名前はなんでもいいのでアプリケーションを作成しましょう  
