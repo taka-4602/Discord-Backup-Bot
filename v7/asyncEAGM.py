@@ -18,7 +18,7 @@ class EAGM:
         data=self.data
         data["grant_type"]="authorization_code"
         data["code"]=code
-        async with httpx.AsyncClient(proxies=self.proxy) as session:
+        async with httpx.AsyncClient(proxy=self.proxy) as session:
             gettoken = await session.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers)
             gettoken=gettoken.json()
             self.access_token=gettoken["access_token"]
@@ -28,7 +28,7 @@ class EAGM:
             return gettoken
     
     async def get_user(self,access_token:str) -> dict:
-        async with httpx.AsyncClient(proxies=self.proxy) as session:
+        async with httpx.AsyncClient(proxy=self.proxy) as session:
             user = await session.get("https://discord.com/api/v10/users/@me", headers={"Authorization": f"Bearer {access_token}"})
             user=user.json()
             self.user_id=user["id"]
@@ -41,7 +41,7 @@ class EAGM:
         data=self.data
         data["grant_type"]="refresh_token"
         data["refresh_token"]=refresh_token
-        async with httpx.AsyncClient(proxies=self.proxy) as session:
+        async with httpx.AsyncClient(proxy=self.proxy) as session:
             refresh=await session.post("https://discord.com/api/v10/oauth2/token", data=data, headers=headers)
             if not refresh.status_code < 300:
                 self.refreshed_access_token=None
@@ -55,12 +55,12 @@ class EAGM:
 
     async def add_member(self,access_token:str,user_id:str,guild_id:str):
         head = {"Authorization": "Bot " + self.bot_token, "Content-Type": "application/json"}
-        async with httpx.AsyncClient(proxies=self.proxy) as session:
+        async with httpx.AsyncClient(proxy=self.proxy) as session:
             adgm=await session.put("https://discord.com/api/guilds/" + guild_id + "/members/" + user_id, headers=head, json={"access_token": access_token})
             return adgm.status_code
     
     async def add_role(self,user_id:str,guild_id:str,role_id:str):
         head = {"Authorization": "Bot " + self.bot_token, "Content-Type": "application/json"}
-        async with httpx.AsyncClient(proxies=self.proxy) as session:
+        async with httpx.AsyncClient(proxy=self.proxy) as session:
             role=await session.put("https://discord.com/api/guilds/" + guild_id + "/members/" + user_id + "/roles/" + role_id, headers=head)
             return role.status_code
