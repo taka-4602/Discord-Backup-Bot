@@ -79,11 +79,11 @@ CLIENT_ID = "119609492~~~~~~~"
 CLIENT_SECRET = "neyNtIZTOgzbnxyRX~~~~~~~~~~"
 REDIRECT_URI = "http://GlobalIP:5000/"
 
-usadata_path = "C:/Users/Taka/Downloads/v5/userdata.json"
-serverdata_folder_path = "C:/Users/Taka/Downloads/v5/server/"
+usadata_path = "C:/Users/Taka/Downloads/v7/userdata.json"
+serverdata_folder_path = "C:/Users/Taka/Downloads/v7/server/"
 authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~~~~~scope=identify+guilds.join)"
 ```
-これの入力が終わったらninV6.pyを実行してBotを起動できます！  
+これの入力が終わったらninV7.pyを実行してBotを起動できます！  
 ### サーバーに接続できない、500が返される
 - ちゃんとポートが開放されているかチェックしてください
 - 自分のグローバルIPに自分のグローバルIPから接続することはできません、ローカルで動作チェックをするならローカルIPを使ってください  
