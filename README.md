@@ -6,7 +6,7 @@
   
 ↓Bot追加用URL↓  
 https://discord.com/oauth2/authorize?client_id=1325891361899151440&permissions=8&scope=bot  
-### サポートサーバー -> https://discord.gg/aSyaAK7Ktm  
+### サポートサーバー -> https://discord.gg/YdrTY2JPR2  
 BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
 しかも無償で。Thankyou very much!!
 ## OAuth2トークンの有効期限について
@@ -116,5 +116,5 @@ jsonに保存する仕様は変わっていないです、jsonを2重で開く�
 なるべくテキストエディターで開けないファイルは使いたくないので、この部分を変更することはないと思います (テキストエディターで開いて、文字化けしてるのが正常かどうか質問してくるユーザーが1定数いる...)  
 あとはユーザートークンをリフレッシュするコードもまだ追加してないです  
 ## コンタクト  
-Discord サーバー / https://discord.gg/aSyaAK7Ktm  
+Discord サーバー / https://discord.gg/YdrTY2JPR2  
 Discord ユーザー名 / .taka.  
