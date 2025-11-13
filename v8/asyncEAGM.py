@@ -60,8 +60,8 @@ class EAGM:
         data["refresh_token"] = refresh_token
 
         class RefreshResponse(NamedTuple):
-            refreshed_access_token: str
-            refreshed_refresh_token: str
+            access_token: str
+            refresh_token: str
 
         async with self.session.post("https://discord.com/api/v10/oauth2/token", data=data, proxy=self.proxy) as response:
             response_json = await response.json()
@@ -69,8 +69,8 @@ class EAGM:
                 raise EAGMError(response_json)
 
             return RefreshResponse(
-                refreshed_access_token=response_json["access_token"],
-                refreshed_refresh_token=response_json["refresh_token"]
+                access_token=response_json["access_token"],
+                refresh_token=response_json["refresh_token"]
             )
 
     async def add_member(self, access_token:str, user_id:int | str, guild_id:int | str):
