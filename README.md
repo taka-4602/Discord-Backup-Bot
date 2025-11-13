@@ -4,26 +4,22 @@
 ## Botについて
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
   
-↓Bot追加用URL↓  
-https://discord.com/oauth2/authorize?client_id=1325891361899151440&permissions=8&scope=bot  
-### サポートサーバー -> https://discord.gg/YdrTY2JPR2  
-BotのHTMLは [Ame-x](https://github.com/EdamAme-x) さんが作成してくれました！  
-しかも無償で。Thankyou very much!!
+↓Bot置き場のサーバー招待 (よくBANされるので)↓  
+https://discord.gg/XsfvtjSGJR
+### サポートサーバー -> https://discord.gg/bvRv838kkd  
 ## OAuth2トークンの有効期限について
-### メンバーブーストに使っているトークンですが、1週間で期限が切れます
-対策としてはリフレッシュトークンを使ってアクセストークンを再発行することです  
+#### メンバーブーストに使っているトークンは1週間で期限が切れます
+リフレッシュトークンを使ってアクセストークンを再発行できます  
 EAGMを使えば簡単に短く収まります
 ```py
 from EAGM import EAGM
 
-token="Discord Bot Token"
-cid="Client ID"
-cse="Client Secret"
-ruri="Redirect URI"
+eagm=EAGM(bot_token="token")
 
-eagm=EAGM(bot_token=token,client_id=cid,client_secret=cse,redirect_uri=ruri,proxy=None)
+async def main():
+  refresh = await eagm.refresh(refresh_token="access_token")
 
-print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行だけ！
+asyncio.run(main())
 ```
 返り値はこんな感じです
 ```
@@ -37,13 +33,10 @@ print(eagm.refresh("refresh_token")) #<- リフレッシュ作業はこの1行�
 
 以下のPythonモジュールをインストールしておきます
 - discord.py
-- httpx
-- flask -> v7は flask[async]
-- ~~EAGM~~ -> v7からは不要
+- flask[async]
 
 ```
 pip install discord.py
-pip install httpx
 pip install flask[async]
 ```
 #### ↑をコピペでインストールできます
@@ -65,25 +58,18 @@ SELECT REDIRECT URLにはさっき入力したアドレスを選択して認証�
 これでDeveloper Portalから必要になる情報は以上です  
 いったんDeveloper Portalを離れてローカル環境で編集します
 ## ローカルでの作業
-リポジトリからv7をダウンロードして使用します  
-このBotはjson形式でユーザー情報を保存するので好きなところに保存するようパスを指定してください
-- 僕は"userdata.json"という名前で保存しました
-  
-そうしたらエディターかメモ帳かでv7path.pyを開きます  
+リポジトリからv8をダウンロードして使用します  
+エディターかメモ帳かでv8path.pyを開きます  
 - 僕はVisual Studio Codeを使いました
 
-#### v7path.py
+#### v8path.py
 ```py
-BOTTOKEN = "MTE5NjA5NDkyMDQwMjkzO~~~~~"
-CLIENT_ID = "119609492~~~~~~~"
-CLIENT_SECRET = "neyNtIZTOgzbnxyRX~~~~~~~~~~"
-REDIRECT_URI = "http://GlobalIP:5000/"
-
-usadata_path = "C:/Users/Taka/Downloads/v7/userdata.json"
-serverdata_folder_path = "C:/Users/Taka/Downloads/v7/server/"
-authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~~~~~scope=identify+guilds.join)"
+BOTTOKEN = "Botのトークンをここに"
+CLIENT_ID = "OAuth2のClientIDをここに"
+CLIENT_SECRET = "OAuth2のClientSecretをここに"
+REDIRECT_URI = "Flaskサーバーが建てられている場所(IPアドレスやドメイン)をここに"
 ```
-これの入力が終わったらninV7.pyを実行してBotを起動できます！  
+これの入力が終わったらninV8.pyを実行してBotを起動できます！  
 ### サーバーに接続できない、500が返される
 - ちゃんとポートが開放されているかチェックしてください
 - 自分のグローバルIPに自分のグローバルIPから接続することはできません、ローカルで動作チェックをするならローカルIPを使ってください  
@@ -101,7 +87,7 @@ authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~
   登録リンクとロール付与のボタンを表示します  
   タイトルと説明を省くとテンプレートの文章を送ります
 - call  
-  jsonに保存されたユーザー全員を追加します、誤爆には充分気をつけてください
+  jsonに保存されたユーザー全員を追加します、誤爆には気をつけてください
 - request1  
   指定したIDのユーザーを追加します  
 - check  
@@ -111,10 +97,9 @@ authurl = "[作ったURLをここに](https://discord.com/api/oauth2/authorize?~
 - delkey  
   指定したユーザーIDの登録情報を削除します
 ### 余談
-v7で非同期になりました、あと1部で報告が挙がっていたロールジャックも防ぐため、v2alphaみたいにローカルファイルに保存するようにしました  
-jsonに保存する仕様は変わっていないです、jsonを2重で開く問題が気になる方は他の保存形式に変えるか、そもそも2重で開かないように調整したら大丈夫だと思います (僕のBotはSQLiteを使ってる)  
-なるべくテキストエディターで開けないファイルは使いたくないので、この部分を変更することはないと思います (テキストエディターで開いて、文字化けしてるのが正常かどうか質問してくるユーザーが1定数いる...)  
-あとはユーザートークンをリフレッシュするコードもまだ追加してないです  
+久しぶりに手を加えました  
+いまだにバージョンがファイル名に使われているのは質問されるときにバージョンがわからないって言われたことが多かったから  
+ここではテキストエディターで開けないファイルを扱いたくないのでjsonだけど、2重に開いた時問題が起きるので公開するならSQLiteとかに移行する必要アリ  
 ## コンタクト  
 Discord サーバー / https://discord.gg/g4UE3kQbmS  
 Discord ユーザー名 / .taka.  
