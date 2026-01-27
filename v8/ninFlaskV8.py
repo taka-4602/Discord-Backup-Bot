@@ -34,7 +34,7 @@ async def index():
         server_id = int(state[0], 16)
         try:
             server_data=json.load(open(os.path.join(serverdata_folder_path, f"{server_id}.json")))
-        except:
+        except (FileNotFoundError, json.JSONDecodeError):
             return render_template("auth.html", error=True, error_title="エラー", error_message="サーバー情報が見つかりません")
 
         try:
@@ -51,7 +51,7 @@ async def index():
         
         try:
             userdata = json.load(open(usadata_path))
-        except:
+        except (FileNotFoundError, json.JSONDecodeError):
             userdata = {}
 
         if not get_user.user_id in server_data.keys():

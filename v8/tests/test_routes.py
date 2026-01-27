@@ -3,31 +3,24 @@ Simple test to verify Flask routes work correctly
 """
 import sys
 import os
+from unittest.mock import MagicMock
 
 # Add the v8 directory to the path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock the v8path module before importing ninFlaskV8
-class MockV8Path:
-    BOTTOKEN = "test_token"
-    CLIENT_ID = "test_client_id"
-    CLIENT_SECRET = "test_client_secret"
-    REDIRECT_URI = "http://localhost:5000/"
-
-sys.modules['v8path'] = MockV8Path()
+v8path_mock = MagicMock()
+v8path_mock.BOTTOKEN = "test_token"
+v8path_mock.CLIENT_ID = "test_client_id"
+v8path_mock.CLIENT_SECRET = "test_client_secret"
+v8path_mock.REDIRECT_URI = "http://localhost:5000/"
+sys.modules['v8path'] = v8path_mock
 
 # Mock asyncEAGM module
-class MockEAGM:
-    def __init__(self, bot_token=None, client_id=None, client_secret=None, redirect_uri=None):
-        pass
-
-class MockEAGMError(Exception):
-    pass
-
-sys.modules['asyncEAGM'] = type('module', (), {
-    'EAGM': MockEAGM,
-    'EAGMError': MockEAGMError
-})()
+asyncEAGM_mock = MagicMock()
+asyncEAGM_mock.EAGM = MagicMock
+asyncEAGM_mock.EAGMError = Exception
+sys.modules['asyncEAGM'] = asyncEAGM_mock
 
 # Now import the Flask app
 from ninFlaskV8 import app
