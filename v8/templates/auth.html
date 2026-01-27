@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}認証 - Discord Backup Bot{% endblock %}
+
+{% block content %}
+<div class="content">
+    {% if error %}
+    <div class="message error">
+        <h1>{{ error_title }}</h1>
+        <p>{{ error_message }}</p>
+    </div>
+    {% elif success %}
+    <div class="message success">
+        <h1>登録成功！</h1>
+        <p>{{ username }}さんよろしく！</p>
+        <p>この画面を閉じて、Discordサーバーに戻ってください。</p>
+    </div>
+    {% endif %}
+    
+    <div class="ad-container">
+        <!-- ExoClick Ad Zone -->
+        <script type="application/javascript" data-idzone="5529630" src="https://a.magsrv.com/ad-provider.js"></script>
+    </div>
+</div>
+{% endblock %}
