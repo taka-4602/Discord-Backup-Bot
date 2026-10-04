@@ -4,6 +4,7 @@
 ## Botについて
 公式サイト！
 # https://bedrock.aa-bot.com/
+# https://github.com/taka-4602/bedrock-documents
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
   
 ↓Bot置き場のサーバー招待 (よくBANされるので)↓  
