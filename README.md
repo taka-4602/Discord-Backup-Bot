@@ -3,7 +3,7 @@
 
 ## Botについて
 公式サイト！
-# https://verify.aa-bedrock.com
+# https://verify.aabedrock.com
 # https://bedrock.aa-bot.com/
 # https://github.com/taka-4602/bedrock-documents
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
