@@ -9,7 +9,7 @@
 ソースを公開していますがコーディング、ホスティングの過程を省きたい場合は僕がすでにデプロイしているものを使ってみてください  
   
 ↓Bot置き場のサーバー招待 (よくBANされるので)↓  
-https://discord.gg/XsfvtjSGJR
+https://discord.gg/bedboost 
 ### サポートサーバー -> https://discord.gg/bvRv838kkd  
 ## OAuth2トークンの有効期限について
 #### メンバーブーストに使っているトークンは1週間で期限が切れます
